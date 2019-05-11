@@ -9,6 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "bluebird": "^3.5.4",
+    "lodash": "^4.17.11",
+    "promise-loader": "^1.0.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.4.5"
   }
 }
