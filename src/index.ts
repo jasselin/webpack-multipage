@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 console.log('index - Loaded');
 
-var modules = window["WebpackTest"];
+var modules = window["WebpackTest"] || {};
 
 const loadModule = name => {
     return new Promise((resolve, reject) => {

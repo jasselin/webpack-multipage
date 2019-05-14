@@ -9,8 +9,8 @@ module.exports = {
     output: {
         filename: "[name].js",
         path: __dirname + "/dist",
-        library: ['WebpackTest', '[name]'],
-        libraryTarget: 'umd'
+        // library: ['WebpackTest', '[name]'],
+        // libraryTarget: 'umd'
     },
     resolve: {
         extensions: [".ts"]
@@ -22,8 +22,8 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            // chunks: 'all',
-            // minSize: 0,
+            chunks: 'all',
+            minSize: 0,
             cacheGroups: {
                 vendor: {
                     test: /node_modules/,
