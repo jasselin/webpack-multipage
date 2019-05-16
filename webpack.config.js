@@ -11,8 +11,8 @@ module.exports = {
     output: {
         filename: "[name].js",
         path: __dirname + "/dist",
-        // library: ['WebpackTest', '[name]'],
-        // libraryTarget: 'umd'
+        library: ['WebpackTest', '[name]'],
+        libraryTarget: 'umd'
     },
     resolve: {
         extensions: [".ts"]

@@ -18,6 +18,11 @@ const loadModule = name => {
             return;
         }
 
+        const script2 = document.createElement('script');
+        document.body.appendChild(script2);
+        script2.async = true;
+        script2.src = 'dist/a~b.js';
+
         const script = document.createElement('script');
         document.body.appendChild(script);
         script.onload = onLoad;
