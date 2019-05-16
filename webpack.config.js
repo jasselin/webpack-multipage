@@ -1,3 +1,5 @@
+var AssetsPlugin = require('assets-webpack-plugin');
+
 module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
@@ -35,5 +37,20 @@ module.exports = {
             }
         },
         runtimeChunk: 'single'
-    }
+    },
+    plugins: [
+        new AssetsPlugin({
+            entrypoints: true,
+            includeAllFileTypes: false,
+            fileTypes: ["js"],
+            processOutput: function (assets) {
+                for (var entry in assets) {
+                    assets[entry] = assets[entry]["js"].filter(function(item) {
+                        return item != "runtime.js" && item != "vendor.js";
+                    });
+                }
+                return JSON.stringify(assets, null, 2);
+            }
+        })
+    ]
 };
